@@ -47,18 +47,11 @@ BEGIN
             wait for 100 ns;
         end loop;
 
-        a <= x"00000004";  
-        b <= x"00000005"; 
-
-        for i in 0 to 15 loop
-            op_code <= std_logic_vector(to_unsigned(i, 4));
-            wait for 100 ns;
-        end loop;
-
         wait;
     end process;	
       	
 
   
 END;
+
 
