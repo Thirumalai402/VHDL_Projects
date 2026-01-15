@@ -38,60 +38,27 @@ BEGIN
         );
 
    -- Stimulus process
-   stim_proc: process
-   begin		
+   stim_proc:  begin
+        a <= x"00000014"; 
+        b <= x"00000005";  
+
+        for i in 0 to 15 loop
+            op_code <= std_logic_vector(to_unsigned(i, 4));
+            wait for 100 ns;
+        end loop;
+
+        a <= x"00000004";  
+        b <= x"00000005"; 
+
+        for i in 0 to 15 loop
+            op_code <= std_logic_vector(to_unsigned(i, 4));
+            wait for 100 ns;
+        end loop;
+
+        wait;
+    end process;	
       	
 
-    a <= x"00000014";  
-    b<= x"00000005";  
-	 op_code <= "0000";  
-        wait for 100 ns;
-      op_code <= "0001";  
-        wait for 100 ns;
-        
-		   op_code <= "0010";  
-        wait for 100 ns;
-        
-		   op_code <= "0011";  
-        wait for 100 ns;
-        
-		   op_code <= "0100";  
-        wait for 100 ns;
-        
-		   op_code <= "0101";  
-        wait for 100 ns;
-        
-		   op_code <= "0110";  
-        wait for 100 ns;
-        
-		   op_code <= "0111";  
-        wait for 100 ns;
-        
-		   op_code <= "1000";  
-        wait for 100 ns;
-        
-		   op_code <= "1001";  
-        wait for 100 ns;
-        
-		   op_code <= "1010";  
-        wait for 100 ns;
-		  
-		  op_code <= "1011";  
-        wait for 100 ns;
-		  
-		  op_code <= "1100";  
-        wait for 100 ns;
-		  
-		  op_code <= "1101";  
-        wait for 100 ns;
-		  
-		  op_code <= "1110";  
-        wait for 100 ns;
-        
-		  op_code <= "1111";  
-        wait for 100 ns;
-
-      wait;
-   end process;
-
+  
 END;
+
