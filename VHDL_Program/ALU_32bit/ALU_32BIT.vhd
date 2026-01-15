@@ -88,7 +88,6 @@ z:= (others => '0');
 end case;
 
 result <= std_logic_vector (z);
-result <= std_logic_vector (z);
 if z = 0 then
 Zero <= '1';
 else
@@ -96,5 +95,6 @@ Zero <= '0';
 end if;
 end process;
 end Behavioral;
+
 
 
